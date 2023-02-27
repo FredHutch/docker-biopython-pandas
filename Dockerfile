@@ -1,9 +1,5 @@
-FROM ubuntu:20.04
+FROM quay.io/hdc-workflows/python-pandas
 MAINTAINER sminot@fredhutch.org
 
-# Install prerequisites
-RUN apt update && \
-	apt-get install -y build-essential python3 python3-pip
-
-# Install BioPython and Pandas from PyPI
-RUN pip3 install pandas==0.24.2 requests tables biopython xmltodict numpy scipy pyarrow
+# Install BioPython from PyPI
+RUN pip3 install biopython xmltodict numpy scipy pyarrow
